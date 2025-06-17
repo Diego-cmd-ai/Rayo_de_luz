@@ -1,0 +1,85 @@
+header {
+  background: linear-gradient(90deg, #e9c2d2, hsl(327, 68%, 54%));
+  color: white;
+  padding: 2rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #d7c8cd 0%, #cd4ea7 100%);
+  color: white;
+  padding: 2.5rem 1rem;
+  margin-top: 3rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: 0 6px 15px rgba(208, 200, 207, 0.5);
+  transition: background 0.3s ease;
+  cursor: default; /* Opcional: cambiar a pointer si quieres */
+}
+
+.contact-section:hover {
+  background: linear-gradient(90deg, #e9c2d2, hsl(327, 68%, 54%));
+  box-shadow: 0 8px 20px rgba(233, 226, 232, 0.7);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.7); }
+  to { transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+

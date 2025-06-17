@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manualidades Rayo de Luz,</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #df8cb7;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgb(0 0 0 / 0.15);
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .product h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    .product p {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
+    .product .price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+    .contact-section {
+      background-color: #df8cb7;
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+    /* Estilos modal */
+    .modal {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #000;
+      animation: zoom 0.3s ease;
+    }
+    @keyframes zoom {
+      from {transform: scale(0.7);}
+      to {transform: scale(1);}
+    }
+    .close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1100;
+    }
+    .close:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>✨ ¡Bienvenido a Rayo de Luz! ✨</h1>
+  <p>Aquí encontrarás manualidades únicas, hechas con pasión y creatividad para iluminar tu hogar y tu vida. Cada pieza está cuidadosamente elaborada para ofrecerte calidad, estilo y ese toque especial que solo el arte hecho a mano puede brindar.
+
+Descubre nuestros productos exclusivos, perfectos para regalar o darte un gusto. En Rayo de Luz, creemos que los detalles marcan la diferencia y queremos acompañarte a transformar tus espacios con luz, color y originalidad.
+
+¡Explora, inspira y déjate llevar por la magia de las manualidades!</p>
+</header>
+
+<div class="container">
+  <section class="products-grid">
+    <div class="product">
+      <img src="imagenes/1.jpg" alt="Producto 1" />
+      <h3>Caja Cosmetiquera</h3>
+      <div class="price">$12.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/2.jpg" alt="Producto 2" />
+      <h3>Porta Cepillos para Cabello</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/3.jpg" alt="Producto 1" />
+      <h3>Cajita Multiusos</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/4.jpg" alt="Producto 1" />
+      <h3>La Casita de las Flores</h3>
+      <div class="price">$20.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/5.jpg" alt="Producto 1" />
+      <h3>Cuadro de las Rosas</h3>
+      <div class="price">$7.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/6.jpg" alt="Producto 1" />
+      <h3>Portalapiceros</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/7.jpg" alt="Producto 1" />
+      <h3>Kit Portacelular y Lapiceros</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/8.jpg" alt="Producto 1" />
+      <h3>Joyeritos</h3>
+      <div class="price">$10.000</div>
+    </div><div class="product">
+      <img src="imagenes/9.jpg" alt="Producto 1" />
+      <h3>Joyeritos</h3>
+      <div class="price">$10.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/10.jpg" alt="Producto 1" />
+      <h3>Joyeritos</h3>
+      <div class="price">$10.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/11.jpg" alt="Producto 1" />
+      <h3>Ancheta</h3>
+      <div class="price">$30.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/12.jpg" alt="Producto 1" />
+      <h3>Ancheta</h3>
+      <div class="price">$20.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/13.jpg" alt="Producto 1" />
+      <h3>Cuadro Familiar</h3>
+      <div class="price">$30.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/14.jpg" alt="Producto 1" />
+      <h3>Porta Lapiceros y Celular</h3>
+      <div class="price">$30.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/15.jpg" alt="Producto 1" />
+      <h3>Canasta Princesa</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/16.jpg" alt="Producto 1" />
+      <h3>Recipiente costurero</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/17.jpg" alt="Producto 1" />
+      <h3>Porta Joyas</h3>
+      <div class="price">$10.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/18.jpg" alt="Producto 1" />
+      <h3>Kit para mesa de centro </h3>
+      <div class="price">$12.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/19.jpg" alt="Producto 1" />
+      <h3>Porta mil usos</h3>
+      <div class="price">$12.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/20.jpg" alt="Producto 1" />
+      <h3>Dulceros</h3>
+      <div class="price">$15.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/21.jpg" alt="Producto 1" />
+      <h3>Cofre para ropa interior</h3>
+      <div class="price">$30.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/22.jpg" alt="Producto 1" />
+      <h3>Cuadro de Adorno para pared</h3>
+      <div class="price">$35.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/23.jpg" alt="Producto 1" />
+      <h3>Adorno para pared</h3>
+      <div class="price">$20.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/24.jpg" alt="Producto 1" />
+      <h3>Cofre para Medias</h3>
+      <div class="price">$30.000</div>
+    </div>
+    <div class="product">
+      <img src="imagenes/25.jpg" alt="Producto 1" />
+      <h3>Dulcero</h3>
+      <div class="price">$15.000</div>
+    </div>
+
+    <!-- Más productos -->
+  </section>
+
+  <section class="contact-section">
+    📞 ¿Te interesa alguno de nuestros productos o tienes una consulta?
+¡Estamos aquí para ayudarte!
+
+Contáctanos directamente al 312 630 5009
+Vía WhatsApp o llamada, será un gusto atenderte.
+
+Tu próxima manualidad favorita está a solo un mensaje de distancia. 💬✨
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Mi Tienda Online. Todos los derechos reservados.
+</footer>
+
+<!-- Modal para imagen ampliada -->
+<div id="image-modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modal-img" alt="Imagen ampliada" />
+</div>
+
+<script>
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = modal.querySelector(".close");
+
+  // Selecciona todas las imágenes de los productos
+  const productImages = document.querySelectorAll(".product img");
+
+  productImages.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  // Cerrar modal con botón X
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  // Cerrar modal clic fuera de la imagen
+  window.onclick = (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
+</html>
